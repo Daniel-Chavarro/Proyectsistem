@@ -8,14 +8,11 @@
     <link rel="stylesheet" href="../layout/index.css">
 </head>
 <body>
-    <header id="hero">
-        <div class="logo">
-
-        </div>
-        <div></div>
+    <header id="nav">
+        <div clas></div>
     </header>
-    <footer id="footer">
-
-    </footer>
+    <section id="hero">
+        <div></div>
+    </section>
 </body>
 </html>
