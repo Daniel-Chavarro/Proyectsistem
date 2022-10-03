@@ -19,6 +19,10 @@ footer{
     color: white;
 }
 
+li{
+    vertical-align: middle;
+}
+
 #languages{
     background-color: black;
     color: white;
@@ -106,6 +110,10 @@ footer{
 .smalldesc .text{
     width: 40%;
     padding-left: 20px;
+}
+
+footer img{
+    height: 50px;
 }
 
 #acerca-nosotros .container{
