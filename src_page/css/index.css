@@ -11,11 +11,11 @@ html{
 header{
     height: 100vh;
     color: rgb(255, 255, 255);
-    background: black;
+    background: var(--background1);
 }
 
 footer{
-    background-color: black;
+    background-color: var(--background1);
     color: white;
 }
 
@@ -24,7 +24,7 @@ li{
 }
 
 #languages{
-    background-color: black;
+    background-color: var(--background1);
     color: white;
 }
 
@@ -61,7 +61,7 @@ li{
     align-items: center;
     height: 216px;
     background-color: white;
-    color: black;
+    color: var(--background1);
 
 }
 
@@ -76,21 +76,7 @@ li{
     border-radius: 50%;
 }
 
-.container{
-    width: 90%;
-    max-width: 1200px;
-    overflow: hidden;
-    margin: auto;
-    padding: 60px 0;
-}
 
-.head{
-    padding: 0;
-    height: 100%;
-    display:flex ;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .text{
     justify-content: center;
@@ -122,4 +108,5 @@ footer img{
 
 :root{
     scroll-behavior: smooth;
+    --background1: black
 }

@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+footer{
+    background-color: var(--background1);
+    color: white;
+    
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.head{
+    padding: 0;
+    height: 100%;
+    display:flex ;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
