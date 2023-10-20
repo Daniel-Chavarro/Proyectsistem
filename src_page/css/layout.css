@@ -15,6 +15,11 @@ footer{
     
 }
 
+
+footer img{
+    height: 50px;
+    }
+
 .container{
     width: 90%;
     max-width: 1200px;
@@ -30,7 +35,4 @@ footer{
     justify-content: space-around;
     align-items: center;
 }
-
-
-
 

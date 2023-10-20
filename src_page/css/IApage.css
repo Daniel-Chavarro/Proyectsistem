@@ -1,50 +1,58 @@
-#nav{
-  background-color:rgb(22, 22, 22);
+:root{
+  scroll-behavior: smooth;
+  --background1: black
 }
 
-h1 {
-  font-style: italic;
-  color: #FF6F00;
+button{
+  border: none; 
+  color: white; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  background-color: var(--background1);
 }
 
-video {
-  display: block;
+
+.returnIndex{
+  right: 0px;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: fixed;
+  width: 170px;
+  font-size: medium;
 }
 
-section {
-  opacity: 1;
-  transition: opacity 500ms ease-in-out;
+
+#IAsection{
+  height: 100vh;
 }
 
-.removed {
+#IAsection .container{
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.contentAI{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.disabled{
   display: none;
 }
 
-.invisible {
-  opacity: 0.2;
+#IAsection .container button{
+  width: 280px;
+  height: 79px;
+  font-size:x-large
 }
 
-.camView {
-  position: relative;
-  float: left;
-  width: calc(100% - 20px);
-  margin: 10px;
-  cursor: pointer;
-}
 
-.camView p {
-  position: absolute;
-  padding: 5px;
-  background-color: rgba(255, 111, 0, 0.85);
-  color: #FFF;
-  border: 1px dashed rgba(255, 255, 255, 0.7);
-  z-index: 2;
-  font-size: 12px;
-}
-
-.highlighter {
-  background: rgba(0, 255, 0, 0.25);
-  border: 1px dashed #fff;
-  z-index: 1;
-  position: absolute;
+button:hover{
+  background-color: rgb(78, 78, 78);
 }

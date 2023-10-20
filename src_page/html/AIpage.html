@@ -1,59 +1,40 @@
-<div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
-<div id="webcam-container"></div>
-<div id="label-container"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/IApage.css">
+    <link rel="stylesheet" href="../css/layout.css">
+</head>
+<body>
+    <button class="returnIndex" onclick="redirect()">Volver a la Pagina principal</button>
+    <section id="IAsection">
+        <div class="container">
+            <h1 id="text">Presiona el botón para iniciar la cámara.</h1>
+            <button type="button" id="buttonStart" onclick="init()">Iniciar</button>
+            <div class="contentAI">
+                <b><div id="webcam-container"></div></b>
+                <b><div id="label-container"></div></b>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <h4>Contáctanos:</h4>
+            <ul>
+                <li><img src="../images/wsblack.png" alt=""><a href="https://wa.link/y3h0sf" target="_blank">Whatsapp</a></li>
+                <li><img src="../images/Instagram.svg" alt=""><a href="https://instagram.com/art.ificialsolutions?utm_source=qr&igshid=YzU1NGVlODEzOA==" target="_blank">Instagram</a></li>
+                <li>Facebook (No disponible)</li>
+            </ul>
+            <p>©Derechos de autor reservados 2022 Artificial Solutions</p>
+        </div>
+    </footer>
+</body>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-<script type="text/javascript">
-    // More API functions here:
-    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
-    // the link to your model provided by Teachable Machine export panel
-    const URL = "../../src_IA/";
-
-    let model, webcam, labelContainer, maxPredictions;
-
-    // Load the image model and setup the webcam
-    async function init() {
-        const modelURL = URL + "model.json";
-        const metadataURL = URL + "metadata.json";
-
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-        model = await tmImage.load(modelURL, metadataURL);
-        maxPredictions = model.getTotalClasses();
-
-        // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop);
-
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
-    }
-
-    async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
-    }
-
-    // run the webcam image through the image model
-    async function predict() {
-        // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
-    }
-</script>
+<script type="text/javascript" src="../js/IAscript.js"></script>
+</html>
