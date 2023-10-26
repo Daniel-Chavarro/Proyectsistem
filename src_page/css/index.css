@@ -26,6 +26,7 @@ li{
 #languages{
     background-color: var(--background1);
     color: white;
+    text-align: center;
 }
 
 #languages .container{
@@ -47,11 +48,13 @@ li{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .n-container-languages{
     display: flex;
     width: 45%;
+    height: 260px;
     align-content: center;
     border-style: solid;
     border-color: white;
@@ -59,38 +62,50 @@ li{
     box-shadow: 5px 5px rgb(255, 255, 255, 0.3);
     flex-direction: column;
     align-items: center;
-    height: 216px;
     background-color: white;
     color: var(--background1);
 
 }
 
 #languages .n-container-languages img{
-    width: 180px;
-    
+    max-width: 180px;
+    width: 80%;
 }
 
+.head{
+    padding: 0;
+    height: 100%;
+    display:flex ;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
 .head img{
-    width: 300px;
-    height: 300px;
+    max-width: 300px;
+    width: 80%;
     border-radius: 50%;
 }
 
 
-
-.text{
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.smalldesc{
+#smalldesc .smalldesc{
+    margin-top:100px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text{
+    min-width: 200px;
 }
 
 .smalldesc img{
-    width: 45%;
+    width: 80%;
+    max-width: 400px;
 }
 
 .smalldesc .text{
@@ -106,9 +121,42 @@ footer img{
     text-align: center;
 }
 
+#proyects_actual .container{
+    text-align: center;
+}
+
+.btnRedirect{
+    margin-top: 20px;
+    position: absolute;
+    display: block;
+    right: 50%;
+    transform: translateX(50%);
+}
 
 
 :root{
     scroll-behavior: smooth;
     --background1: black
+}
+
+@media screen and (max-width: 750px) {
+
+    .smalldesc .text{
+        width: 80%;
+    }
+
+    .smalldesc{
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .container-modules{
+        gap: 30px;
+    }
+
+
+    .n-container-languages{
+        width: 80%;
+        height: auto;
+    }
 }

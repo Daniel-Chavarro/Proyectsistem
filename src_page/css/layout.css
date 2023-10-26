@@ -20,6 +20,16 @@ footer img{
     height: 50px;
     }
 
+button, .btnRedirect{
+    border: none; 
+    color: white; 
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: var(--background1);
+    }
+
+    
 .container{
     width: 90%;
     max-width: 1200px;
@@ -28,11 +38,12 @@ footer img{
     padding: 60px 0;
 }
 
-.head{
-    padding: 0;
-    height: 100%;
-    display:flex ;
-    justify-content: space-around;
-    align-items: center;
-}
 
+.btnRedirect{
+    width: 170px;
+    font-size: medium;
+  }
+
+button:hover , .btnRedirect:hover{
+    background-color: rgb(78, 78, 78);
+}

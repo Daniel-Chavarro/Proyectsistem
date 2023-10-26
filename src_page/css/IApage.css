@@ -3,17 +3,9 @@
   --background1: black
 }
 
-button{
-  border: none; 
-  color: white; 
-  padding: 14px 28px; 
-  cursor: pointer; 
-  border-radius: 5px; 
-  background-color: var(--background1);
-}
 
 
-.returnIndex{
+.btnRedirect{
   right: 0px;
   margin-top: 10px;
   margin-right: 10px;
@@ -53,6 +45,3 @@ button{
 }
 
 
-button:hover{
-  background-color: rgb(78, 78, 78);
-}

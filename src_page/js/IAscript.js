@@ -56,5 +56,5 @@ text = document.getElementById("text")
     }
 
 function redirect() {
-    window.location.replace("index.html")
+    window.location.replace("../../index.html")
 }
