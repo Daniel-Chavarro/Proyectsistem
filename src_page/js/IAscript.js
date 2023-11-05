@@ -3,11 +3,12 @@ const webcamContainer = document.getElementById('webcam-container');
 const labelContainer = document.getElementById('label-container');
 const buttonInit = document.getElementById('buttonStart')
 const URL = '../../src_IA/';
-
+const textLoad = document.getElementById('textLoad')
 
 
 
 function init() {
+    textLoad.classList.remove('disabled')
     buttonInit.classList.add('disabled')
     video.autoplay = true;
     webcamContainer.appendChild(video);
@@ -41,12 +42,15 @@ function init() {
     function predict(model, numTotalclasses) {
         setInterval(async () => {   
         const prediction = await model.predict(video);
-        
+        textLoad.classList.add('disabled')
+
         for (i = 0 ; i < numTotalclasses; i++){
             const textPrediction = prediction[i].className + ": " + (prediction[i].probability.toFixed(2) *100) + "%"
             labelContainer.childNodes[i].innerHTML = textPrediction
         }
         }, 1000);
+    
     }
+    
     }
 }
