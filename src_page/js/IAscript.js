@@ -59,7 +59,3 @@ var camHeight = 350
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
-
-function redirect() {
-    window.location.replace("../../index.html")
-}
