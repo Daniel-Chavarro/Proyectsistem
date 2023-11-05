@@ -13,7 +13,7 @@ function init() {
     webcamContainer.appendChild(video);
 
 
-    navigator.mediaDevices.getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({ video: {facingMode:'environment'} })
     .then((stream) => {
         video.srcObject = stream;
         video.addEventListener('loadeddata', () => {
@@ -43,7 +43,7 @@ function init() {
         const prediction = await model.predict(video);
         
         for (i = 0 ; i < numTotalclasses; i++){
-            const textPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2)
+            const textPrediction = prediction[i].className + ": " + (prediction[i].probability.toFixed(2) *100) + "%"
             labelContainer.childNodes[i].innerHTML = textPrediction
         }
         }, 1000);
