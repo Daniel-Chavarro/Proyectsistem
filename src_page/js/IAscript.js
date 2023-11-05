@@ -1,5 +1,9 @@
-button = document.getElementById("buttonStart")
-text = document.getElementById("text")
+const button = document.getElementById("buttonStart")
+const text = document.getElementById("text")
+const screenWidthBp = matchMedia("(max-width: 556px)")
+var camWidth = 500 * 0.8
+var camHeight = 350 
+
 
 // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
@@ -11,6 +15,7 @@ text = document.getElementById("text")
 
     // Load the image model and setup the webcam
     async function init() {
+        
         button.classList.add("disabled")
         text.innerHTML = "Pon un objeto a la vista de la cámara."	
         const modelURL = URL + "model.json";
@@ -25,7 +30,7 @@ text = document.getElementById("text")
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(500, 350, flip); // width, height, flip
+        webcam = new tmImage.Webcam(camWidth, camHeight, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
