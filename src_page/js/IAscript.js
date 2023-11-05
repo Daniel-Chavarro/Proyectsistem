@@ -33,7 +33,6 @@ function init() {
             labelContainer.appendChild(document.createElement("div"));
         }
         predict(model,numTotalclasses);
-        console.log(model)
         })
         .catch((err) => {
         console.error('Error loading the model: ', err);
