@@ -28,25 +28,20 @@ function init() {
     function loadModel() {
     tmImage.load(URL + 'model.json', URL + 'metadata.json')
         .then((model) => {
-        numTotalclasses = model.getTotalClasses();
-        for (let i = 0 ; i < numTotalclasses ; i++){
-            labelContainer.appendChild(document.createElement("div"));
-        }
-        predict(model,numTotalclasses);
+            predict(model);
         })
         .catch((err) => {
         console.error('Error loading the model: ', err);
         });
 
-    function predict(model, numTotalclasses) {
+    function predict(model) {
         setInterval(async () => {   
         const prediction = await model.predict(video);
         textLoad.classList.add('disabled')
+        indexMaxValue= (prediction.indexOf(Math.max(...prediction.map(x=>parseFloat(x.probability))))) * (-1)
+        labelContainer.innerHTML = 'Es mas probable a ser ' + prediction[indexMaxValue].className 
 
-        for (i = 0 ; i < numTotalclasses; i++){
-            const textPrediction = prediction[i].className + ": " + (prediction[i].probability.toFixed(2) *100) + "%"
-            labelContainer.childNodes[i].innerHTML = textPrediction
-        }
+
         }, 1000);
     
     }
